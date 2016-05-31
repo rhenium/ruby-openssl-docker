@@ -23,28 +23,28 @@ RUN mkdir -p /build/openssl && \
     curl -s https://www.openssl.org/source/openssl-1.0.0t.tar.gz | tar -C /build/openssl -xzf - && \
     cd build/openssl/openssl-1.0.0t && \
     ./config \
-      --openssldir=/opt/openssl/openssl-1.0.0t \
+      --prefix=/opt/openssl/openssl-1.0.0t \
       shared && \
     make && make install
 
 RUN curl -s https://www.openssl.org/source/openssl-1.0.1s.tar.gz | tar -C /build/openssl -xzf - && \
     cd build/openssl/openssl-1.0.1s && \
     ./config \
-       --openssldir=/opt/openssl/openssl-1.0.1s \
+       --prefix=/opt/openssl/openssl-1.0.1s \
        shared && \
     make && make install
 
 RUN curl -s https://www.openssl.org/source/openssl-1.0.2g.tar.gz | tar -C /build/openssl -xzf - && \
     cd build/openssl/openssl-1.0.2g && \
     ./config \
-       --openssldir=/opt/openssl/openssl-1.0.2g \
+       --prefix=/opt/openssl/openssl-1.0.2g \
        shared && \
     make && make install
 
 RUN curl -s https://www.openssl.org/source/openssl-1.1.0-pre3.tar.gz | tar -C /build/openssl -xzf - && \
     cd build/openssl/openssl-1.1.0-pre3 && \
     ./config \
-       --openssldir=/opt/openssl/openssl-1.1.0-pre3 \
+       --prefix=/opt/openssl/openssl-1.1.0-pre3 \
        shared && \
     make && make install
 
