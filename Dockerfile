@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   xz-utils \
   zlib1g-dev
 
-# Supported OpenSSL versions: 1.0.0, 1.0.1, 1.0.2, 1.1.0-pre3
+# Supported OpenSSL versions: 1.0.0, 1.0.1, 1.0.2
 RUN mkdir -p /build/openssl && \
     curl -s https://www.openssl.org/source/openssl-1.0.0t.tar.gz | tar -C /build/openssl -xzf - && \
     cd build/openssl/openssl-1.0.0t && \
@@ -38,13 +38,6 @@ RUN curl -s https://www.openssl.org/source/openssl-1.0.2g.tar.gz | tar -C /build
     cd build/openssl/openssl-1.0.2g && \
     ./config \
        --prefix=/opt/openssl/openssl-1.0.2g \
-       shared && \
-    make && make install
-
-RUN curl -s https://www.openssl.org/source/openssl-1.1.0-pre3.tar.gz | tar -C /build/openssl -xzf - && \
-    cd build/openssl/openssl-1.1.0-pre3 && \
-    ./config \
-       --prefix=/opt/openssl/openssl-1.1.0-pre3 \
        shared && \
     make && make install
 
